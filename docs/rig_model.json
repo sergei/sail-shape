@@ -1,0 +1,683 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "vessel": "Sun Dragon",
+    "sail_number": "USA 33070",
+    "class": "Jeanneau Sun Fast 3300",
+    "orr_cert": "US43110 (issued 2026-05-18)",
+    "rig": "fractional sloop, carbon mast, double swept spreaders, split backstay, no inner forestay, no runners",
+    "status": "geometry is a schematic reconstruction; only items with source=cert are authoritative",
+    "companion_visual": "https://claude.ai/artifact/GErRFApGJCMfQLmLx41rjk"
+  },
+  "units": {
+    "length": "ft",
+    "mass": "lb",
+    "angle": "deg",
+    "ft_to_m": 0.3048,
+    "lb_to_kg": 0.45359237
+  },
+  "coordinate_system": {
+    "origin": "mast axis at deck/sheer datum, on centerline",
+    "x": "forward +",
+    "y": "starboard +",
+    "z": "up +",
+    "baseline_state": "upright, zero heel, no sail load, wires unloaded geometry",
+    "mast_axis": "straight line from origin raked aft by mast_rake_aft_deg in the x-z plane (no pre-bend modelled)"
+  },
+  "parameters": {
+    "I_forestay_height": {
+      "value": 41.037,
+      "unit": "ft",
+      "source": "cert",
+      "note": "measured along mast from sheer datum"
+    },
+    "ISPA_masthead_height": {
+      "value": 44.318,
+      "unit": "ft",
+      "source": "cert",
+      "note": "spin halyard height; used as masthead; I + TL"
+    },
+    "J_fore_triangle_base": {
+      "value": 13.714,
+      "unit": "ft",
+      "source": "cert",
+      "note": "mast to forestay base at deck/sprit; ~0.25 ft mast half-depth not modelled"
+    },
+    "P_main_luff": {
+      "value": 39.331,
+      "unit": "ft",
+      "source": "cert"
+    },
+    "E_boom_length": {
+      "value": 14.534,
+      "unit": "ft",
+      "source": "cert"
+    },
+    "BAS_boom_height": {
+      "value": 4.843,
+      "unit": "ft",
+      "source": "cert",
+      "note": "boom above datum; consistent with P+BAS=44.17 ~ masthead"
+    },
+    "TL_top_length": {
+      "value": 3.281,
+      "unit": "ft",
+      "source": "cert",
+      "note": "ISPA - I"
+    },
+    "mast_weight": {
+      "value": 184.1,
+      "unit": "lb",
+      "source": "cert"
+    },
+    "mast_cg_height": {
+      "value": 15.659,
+      "unit": "ft",
+      "source": "cert",
+      "note": "assumed measured along mast from base"
+    },
+    "mast_section_lower": {
+      "value": {
+        "fore_aft_ft": 0.505,
+        "athwart_ft": 0.302
+      },
+      "unit": "ft",
+      "source": "cert",
+      "note": "MDL1/MDT1 (my reading of abbreviations)"
+    },
+    "mast_section_upper": {
+      "value": {
+        "fore_aft_ft": 0.436,
+        "athwart_ft": 0.302
+      },
+      "unit": "ft",
+      "source": "cert",
+      "note": "MDL2/MDT2 (my reading of abbreviations)"
+    },
+    "mast_rake_aft_deg": {
+      "value": 5.0,
+      "unit": "deg",
+      "source": "user",
+      "note": "mast axis leans aft from vertical, in x-z plane"
+    },
+    "chainplates_shared": {
+      "value": true,
+      "unit": "bool",
+      "source": "user",
+      "note": "cap, intermediate and lower shrouds land on the same chainplate per side"
+    },
+    "spreader_lower_height": {
+      "value": 13.7,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 1.0,
+      "note": "along mast"
+    },
+    "spreader_upper_height": {
+      "value": 27.4,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 1.0,
+      "note": "along mast"
+    },
+    "spreader_lower_athwart": {
+      "value": 3.9,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.5,
+      "note": "tip distance from centerline"
+    },
+    "spreader_upper_athwart": {
+      "value": 2.5,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.5,
+      "note": "tip distance from centerline"
+    },
+    "spreader_lower_sweep_aft": {
+      "value": 2.5,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.8,
+      "note": "tip aft of mast axis at spreader height"
+    },
+    "spreader_upper_sweep_aft": {
+      "value": 2.2,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.8,
+      "note": "tip aft of mast axis at spreader height"
+    },
+    "lower_shroud_mast_height": {
+      "value": 13.4,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.8,
+      "note": "mast attachment just below lower spreader; along mast"
+    },
+    "chainplate_aft_of_mast_base": {
+      "value": 2.5,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.8
+    },
+    "chainplate_half_span": {
+      "value": 4.7,
+      "unit": "ft",
+      "source": "photo_est",
+      "uncertainty": 0.5,
+      "note": "athwartships from centerline; beam max 11.453 ft"
+    },
+    "transom_attach_aft_of_mast_base": {
+      "value": 20.5,
+      "unit": "ft",
+      "source": "assumed",
+      "uncertainty": 1.0,
+      "note": "photo-scaled; LOA 32.776 ft"
+    },
+    "transom_attach_half_span": {
+      "value": 4.2,
+      "unit": "ft",
+      "source": "assumed",
+      "uncertainty": 0.5,
+      "note": "split backstay to transom corners"
+    },
+    "forestay_base_height": {
+      "value": 0.0,
+      "unit": "ft",
+      "source": "assumed",
+      "note": "bowsprit/deck datum"
+    },
+    "boom_attitude": {
+      "value": "horizontal",
+      "unit": "-",
+      "source": "assumed"
+    }
+  },
+  "nodes": [
+    {
+      "id": "mast_base",
+      "xyz": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "kind": "mast_axis",
+      "note": "origin, deck/sheer datum"
+    },
+    {
+      "id": "mast_head",
+      "xyz": [
+        -3.8626,
+        0.0,
+        44.1494
+      ],
+      "kind": "mast_axis",
+      "note": "backstay + spin halyard"
+    },
+    {
+      "id": "mast_hounds",
+      "xyz": [
+        -3.5766,
+        0.0,
+        40.8808
+      ],
+      "kind": "mast_axis",
+      "note": "forestay + cap shroud attach"
+    },
+    {
+      "id": "mast_upper_spr",
+      "xyz": [
+        -2.3881,
+        0.0,
+        27.2957
+      ],
+      "kind": "mast_axis",
+      "note": "upper spreader root + intermediate attach"
+    },
+    {
+      "id": "mast_lower_spr",
+      "xyz": [
+        -1.194,
+        0.0,
+        13.6479
+      ],
+      "kind": "mast_axis",
+      "note": "lower spreader root"
+    },
+    {
+      "id": "mast_lower_shroud",
+      "xyz": [
+        -1.1679,
+        0.0,
+        13.349
+      ],
+      "kind": "mast_axis",
+      "note": "lower shroud attach"
+    },
+    {
+      "id": "boom_gooseneck",
+      "xyz": [
+        -0.4237,
+        0.0,
+        4.843
+      ],
+      "kind": "boom"
+    },
+    {
+      "id": "boom_clew",
+      "xyz": [
+        -14.9577,
+        0.0,
+        4.843
+      ],
+      "kind": "boom",
+      "note": "assumes horizontal boom"
+    },
+    {
+      "id": "forestay_base",
+      "xyz": [
+        13.714,
+        0.0,
+        0.0
+      ],
+      "kind": "deck"
+    },
+    {
+      "id": "spr_upper_tip_port",
+      "xyz": [
+        -4.5881,
+        -2.5,
+        27.2957
+      ],
+      "kind": "spreader_tip"
+    },
+    {
+      "id": "spr_lower_tip_port",
+      "xyz": [
+        -3.694,
+        -3.9,
+        13.6479
+      ],
+      "kind": "spreader_tip"
+    },
+    {
+      "id": "chainplate_port",
+      "xyz": [
+        -2.5,
+        -4.7,
+        0.0
+      ],
+      "kind": "deck",
+      "note": "cap+intermediate+lower"
+    },
+    {
+      "id": "transom_port",
+      "xyz": [
+        -20.5,
+        -4.2,
+        0.0
+      ],
+      "kind": "deck",
+      "note": "backstay base"
+    },
+    {
+      "id": "spr_upper_tip_stbd",
+      "xyz": [
+        -4.5881,
+        2.5,
+        27.2957
+      ],
+      "kind": "spreader_tip"
+    },
+    {
+      "id": "spr_lower_tip_stbd",
+      "xyz": [
+        -3.694,
+        3.9,
+        13.6479
+      ],
+      "kind": "spreader_tip"
+    },
+    {
+      "id": "chainplate_stbd",
+      "xyz": [
+        -2.5,
+        4.7,
+        0.0
+      ],
+      "kind": "deck",
+      "note": "cap+intermediate+lower"
+    },
+    {
+      "id": "transom_stbd",
+      "xyz": [
+        -20.5,
+        4.2,
+        0.0
+      ],
+      "kind": "deck",
+      "note": "backstay base"
+    }
+  ],
+  "members": [
+    {
+      "id": "mast",
+      "type": "beam",
+      "role": "mast",
+      "nodes": [
+        "mast_base",
+        "mast_head"
+      ],
+      "length_ft": 44.318,
+      "material": "carbon",
+      "mass_lb": 184.1,
+      "cg_height_ft": 15.659,
+      "section_lower": {
+        "fore_aft_ft": 0.505,
+        "athwart_ft": 0.302
+      },
+      "section_upper": {
+        "fore_aft_ft": 0.436,
+        "athwart_ft": 0.302
+      },
+      "boundary_condition_at_base": "UNKNOWN (keel-stepped pinned vs deck-stepped); see unknowns"
+    },
+    {
+      "id": "spreader_upper_port",
+      "type": "strut",
+      "nodes": [
+        "mast_upper_spr",
+        "spr_upper_tip_port"
+      ],
+      "length_ft": 3.33,
+      "compression_only": true
+    },
+    {
+      "id": "spreader_lower_port",
+      "type": "strut",
+      "nodes": [
+        "mast_lower_spr",
+        "spr_lower_tip_port"
+      ],
+      "length_ft": 4.632,
+      "compression_only": true
+    },
+    {
+      "id": "cap_port",
+      "type": "wire",
+      "role": "cap_shroud",
+      "path": [
+        "mast_hounds",
+        "spr_upper_tip_port",
+        "spr_lower_tip_port",
+        "chainplate_port"
+      ],
+      "segment_lengths_ft": [
+        13.85,
+        13.749,
+        13.723
+      ],
+      "total_length_ft": 41.322,
+      "tension_only": true,
+      "tip_contact_deflection_deg": {
+        "spr_upper_tip_port": 9.14,
+        "spr_lower_tip_port": 2.8
+      }
+    },
+    {
+      "id": "intermediate_port",
+      "type": "wire",
+      "role": "intermediate_shroud",
+      "path": [
+        "mast_upper_spr",
+        "spr_lower_tip_port",
+        "chainplate_port"
+      ],
+      "segment_lengths_ft": [
+        14.254,
+        13.723
+      ],
+      "total_length_ft": 27.977,
+      "tension_only": true,
+      "tip_contact_deflection_deg": {
+        "spr_lower_tip_port": 16.22
+      }
+    },
+    {
+      "id": "lower_port",
+      "type": "wire",
+      "role": "lower_shroud",
+      "path": [
+        "mast_lower_shroud",
+        "chainplate_port"
+      ],
+      "segment_lengths_ft": [
+        14.215
+      ],
+      "total_length_ft": 14.215,
+      "tension_only": true
+    },
+    {
+      "id": "backstay_port",
+      "type": "wire",
+      "role": "split_backstay",
+      "path": [
+        "mast_head",
+        "transom_port"
+      ],
+      "segment_lengths_ft": [
+        47.367
+      ],
+      "total_length_ft": 47.367,
+      "tension_only": true
+    },
+    {
+      "id": "spreader_upper_stbd",
+      "type": "strut",
+      "nodes": [
+        "mast_upper_spr",
+        "spr_upper_tip_stbd"
+      ],
+      "length_ft": 3.33,
+      "compression_only": true
+    },
+    {
+      "id": "spreader_lower_stbd",
+      "type": "strut",
+      "nodes": [
+        "mast_lower_spr",
+        "spr_lower_tip_stbd"
+      ],
+      "length_ft": 4.632,
+      "compression_only": true
+    },
+    {
+      "id": "cap_stbd",
+      "type": "wire",
+      "role": "cap_shroud",
+      "path": [
+        "mast_hounds",
+        "spr_upper_tip_stbd",
+        "spr_lower_tip_stbd",
+        "chainplate_stbd"
+      ],
+      "segment_lengths_ft": [
+        13.85,
+        13.749,
+        13.723
+      ],
+      "total_length_ft": 41.322,
+      "tension_only": true,
+      "tip_contact_deflection_deg": {
+        "spr_upper_tip_stbd": 9.14,
+        "spr_lower_tip_stbd": 2.8
+      }
+    },
+    {
+      "id": "intermediate_stbd",
+      "type": "wire",
+      "role": "intermediate_shroud",
+      "path": [
+        "mast_upper_spr",
+        "spr_lower_tip_stbd",
+        "chainplate_stbd"
+      ],
+      "segment_lengths_ft": [
+        14.254,
+        13.723
+      ],
+      "total_length_ft": 27.977,
+      "tension_only": true,
+      "tip_contact_deflection_deg": {
+        "spr_lower_tip_stbd": 16.22
+      }
+    },
+    {
+      "id": "lower_stbd",
+      "type": "wire",
+      "role": "lower_shroud",
+      "path": [
+        "mast_lower_shroud",
+        "chainplate_stbd"
+      ],
+      "segment_lengths_ft": [
+        14.215
+      ],
+      "total_length_ft": 14.215,
+      "tension_only": true
+    },
+    {
+      "id": "backstay_stbd",
+      "type": "wire",
+      "role": "split_backstay",
+      "path": [
+        "mast_head",
+        "transom_stbd"
+      ],
+      "segment_lengths_ft": [
+        47.367
+      ],
+      "total_length_ft": 47.367,
+      "tension_only": true
+    },
+    {
+      "id": "forestay",
+      "type": "wire",
+      "role": "forestay",
+      "path": [
+        "mast_hounds",
+        "forestay_base"
+      ],
+      "segment_lengths_ft": [
+        44.387
+      ],
+      "total_length_ft": 44.387,
+      "tension_only": true
+    }
+  ],
+  "derived": {
+    "forestay_angle_from_vertical_deg": 22.93,
+    "backstay_angle_from_vertical_deg_sideview": 20.65,
+    "masthead_aft_of_base_ft": 3.863,
+    "member_lengths_ft": {
+      "mast": 44.318,
+      "spreader_upper_port": 3.33,
+      "spreader_lower_port": 4.632,
+      "cap_port": 41.322,
+      "intermediate_port": 27.977,
+      "lower_port": 14.215,
+      "backstay_port": 47.367,
+      "spreader_upper_stbd": 3.33,
+      "spreader_lower_stbd": 4.632,
+      "cap_stbd": 41.322,
+      "intermediate_stbd": 27.977,
+      "lower_stbd": 14.215,
+      "backstay_stbd": 47.367,
+      "forestay": 44.387
+    }
+  },
+  "sails": {
+    "source": "cert",
+    "main": {
+      "desc": "ST Main",
+      "area_ft2": 402.2,
+      "rated_area_ft2": 402.2,
+      "MHB": 4.724,
+      "MUW": 5.577,
+      "MTW": 7.513,
+      "MHW": 10.302,
+      "MQW": 12.5,
+      "weight_lb": 49.4
+    },
+    "jib": {
+      "desc": "Jib Medium",
+      "area_ft2": 311.5,
+      "rated_area_ft2": 311.0,
+      "HLP": 13.714,
+      "HLU": 42.717,
+      "HHB": 0.262,
+      "HUW": 2.165,
+      "HTW": 4.003,
+      "HHW": 7.48,
+      "HQW": 10.728,
+      "HLE": 37.697
+    },
+    "asym_spinnaker": {
+      "desc": "A1.5",
+      "area_ft2": 1140.7,
+      "SLU": 50.033,
+      "SLE": 45.112,
+      "SHW": 28.379,
+      "SFL": 30.348,
+      "tack": "centerline"
+    },
+    "ISPA_ft": 44.318,
+    "TPS_ft": 17.552,
+    "fstay_adjust": "via backstay",
+    "inner_forestay": "none",
+    "whisker_pole": false
+  },
+  "hull_and_stability": {
+    "source": "cert",
+    "LOA_ft": 32.776,
+    "beam_max_ft": 11.453,
+    "draft_sailing_ft": 6.499,
+    "displacement_empty_lb": 8102,
+    "displacement_sailing_lb": 9218,
+    "rated_crew_wgt_lb": 351,
+    "LPS_deg": 117.9,
+    "stability_index_deg": 112.5,
+    "righting_moment_ftlb_as_printed": {
+      "RM2": 970.8,
+      "RM20": 885.5,
+      "RM40": 637.8,
+      "RM60": 442.8,
+      "RM90": 191.4
+    },
+    "keel": "fixed",
+    "mast_material": "carbon",
+    "hull_construction": "cored"
+  },
+  "assumptions": [
+    "Cap shroud is one continuous wire over both spreader tips (discontinuous rod rigs share the same node geometry; split the path at the tips).",
+    "Intermediate shroud runs mast@upper spreader -> lower tip -> chainplate; lowers run mast -> same chainplate (user-confirmed shared chainplates).",
+    "Spreaders are horizontal in side view, swept aft; tip positions from photos.",
+    "Forestay attaches at the hounds node; masthead attach for backstay; boom horizontal at BAS height.",
+    "I and ISPA are measured along the raked mast; vertical heights differ by <0.4% (cos 5 deg)."
+  ],
+  "unknowns_needed_for_structural_models": [
+    "wire/rod type, diameter, modulus (EA) and breaking loads for cap, intermediate, lower, forestay, backstay",
+    "initial pretension / tuning (base tension, backstay adjuster range)",
+    "mast wall thickness, laminate, EI(z), taper; spreader section/stiffness; tang and chainplate stiffness",
+    "mast step (keel vs deck) and partner/gate constraints; mast pre-bend",
+    "true spreader heights/lengths/angles, chainplate positions (replace photo estimates)",
+    "wind/sail load cases (polars are in the ORR certificate PDF, not included here)"
+  ],
+  "agent_notes": [
+    "Treat source=cert and source=user as fixed; sweep photo_est/assumed parameters within their uncertainty (+/-) for sensitivity runs.",
+    "Re-generate geometry with build(overrides={...}) instead of editing nodes by hand.",
+    "Wires are tension-only; spreaders compression-only; contact at spreader tips (friction/pinned) is not specified.",
+    "Convert to SI with units.ft_to_m before use if your solver expects metres."
+  ]
+}

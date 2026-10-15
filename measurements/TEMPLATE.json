@@ -1,0 +1,19 @@
+{
+  "id": "dock-YYYY-MM-DD-a",
+  "date": "YYYY-MM-DD",
+  "notes": "Copy this file per measured state. Heights in metres along the mast from the deck datum. Remove the example observations and record what you actually measured. chord_offset: + forward (fore_aft) / + starboard (lateral) of a taut line between chord_m heights. Wires: cap_port, cap_stbd, intermediate_*, lower_*, backstay_*, forestay; groups: cap, intermediate, lower, backstay, forestay.",
+  "state": {
+    "controls": {
+      "cap": {"tension": 0},
+      "intermediate": {"tension": 0},
+      "lower": {"tension": 0},
+      "backstay": {"tension": 0}
+    },
+    "loads": [],
+    "gravity": true
+  },
+  "observations": [
+    {"type": "chord_offset", "plane": "fore_aft", "chord_m": [1.48, 13.508], "height_m": 6.5, "value_m": 0.0, "sigma_m": 0.003},
+    {"type": "wire_tension", "wire": "forestay", "value_N": 0, "sigma_N": 500}
+  ]
+}

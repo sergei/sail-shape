@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "vessel": "Sun Dragon",
+    "class": "Jeanneau Sun Fast 3300",
+    "units": "SI (m, N, kg, Pa)",
+    "geometry_file": "rig_model.json",
+    "status": "first-principles estimates, NOT calibrated; treat absolute bend as +/- 41%"
+  },
+  "parameters": {
+    "mast_weight_kg": {
+      "value": 83.51,
+      "unit": "kg",
+      "source": "cert",
+      "note": "ORR mast weight"
+    },
+    "mast_length_m": {
+      "value": 13.5081,
+      "unit": "m",
+      "source": "cert",
+      "note": "ISPA, tube modelled from deck datum to masthead"
+    },
+    "mast_lower_fa_m": {
+      "value": 0.1539,
+      "unit": "m",
+      "source": "cert",
+      "note": "MDL1 fore-aft depth"
+    },
+    "mast_lower_ath_m": {
+      "value": 0.092,
+      "unit": "m",
+      "source": "cert",
+      "note": "MDT1 athwart width"
+    },
+    "mast_upper_fa_m": {
+      "value": 0.1329,
+      "unit": "m",
+      "source": "cert",
+      "note": "MDL2"
+    },
+    "mast_upper_ath_m": {
+      "value": 0.092,
+      "unit": "m",
+      "source": "cert",
+      "note": "MDT2"
+    },
+    "mast_section_shape": {
+      "value": "ellipse",
+      "unit": "-",
+      "source": "assumed",
+      "note": "thin-walled ellipse through MDL x MDT"
+    },
+    "mast_taper_start_m": {
+      "value": 8.352,
+      "unit": "m",
+      "source": "assumed",
+      "uncertainty": 1.5,
+      "note": "lower section constant up to here (upper spreader)"
+    },
+    "mast_taper_end_m": {
+      "value": 12.508,
+      "unit": "m",
+      "source": "assumed",
+      "uncertainty": 1.0,
+      "note": "upper section from here up (hounds)"
+    },
+    "mast_E_axial_Pa": {
+      "value": 90000000000.0,
+      "unit": "Pa",
+      "source": "estimate",
+      "uncertainty": 0.3,
+      "note": "effective longitudinal modulus of a production carbon mast laminate"
+    },
+    "mast_G_Pa": {
+      "value": 15000000000.0,
+      "unit": "Pa",
+      "source": "estimate",
+      "uncertainty": 0.5,
+      "note": "only torsion; barely affects bend"
+    },
+    "mast_density_kgm3": {
+      "value": 1550.0,
+      "unit": "kg/m3",
+      "source": "estimate",
+      "uncertainty": 0.05
+    },
+    "mast_tube_mass_fraction": {
+      "value": 0.55,
+      "unit": "-",
+      "source": "assumed",
+      "uncertainty": 0.15,
+      "note": "share of cert mast weight in the bare tube (rest: fittings, spreaders, halyards)"
+    },
+    "spreader_E_Pa": {
+      "value": 70000000000.0,
+      "unit": "Pa",
+      "source": "assumed",
+      "uncertainty": 0.1,
+      "note": "aluminium"
+    },
+    "spreader_chord_m": {
+      "value": 0.07,
+      "unit": "m",
+      "source": "assumed",
+      "uncertainty": 0.015
+    },
+    "spreader_thickness_m": {
+      "value": 0.025,
+      "unit": "m",
+      "source": "assumed",
+      "uncertainty": 0.008
+    },
+    "spreader_wall_m": {
+      "value": 0.0025,
+      "unit": "m",
+      "source": "assumed",
+      "uncertainty": 0.001
+    },
+    "spreader_root": {
+      "value": "fixed",
+      "unit": "-",
+      "source": "assumed",
+      "note": "bracket clamps the spreader to the mast in both planes"
+    },
+    "spreader_tip_contact": {
+      "value": "sliding",
+      "unit": "-",
+      "source": "user",
+      "note": "shrouds are continuous over the tips; frictionless sliding modelled ('clamped' not implemented)"
+    },
+    "base_condition": {
+      "value": "pinned",
+      "unit": "-",
+      "source": "assumed",
+      "note": "UNKNOWN keel- vs deck-stepped; use calibration params base_k_rot_* for partial fixity"
+    }
+  },
+  "wire_modulus": {
+    "value": 120000000000.0,
+    "unit": "Pa",
+    "source": "estimate",
+    "uncertainty": 0.15,
+    "note": "compacted 1x19 strand, modulus on nominal circular area"
+  },
+  "derived": {
+    "mast_wall_thickness_m": 0.00571,
+    "mast_section_lower": {
+      "area_m2": 0.0022408,
+      "EA_N": 201670000.0,
+      "EI_fa_Nm2": 513760.0,
+      "EI_lat_Nm2": 236460.0,
+      "GJ_Nm2": 107980.0
+    },
+    "mast_section_upper": {
+      "area_m2": 0.0020341,
+      "EA_N": 183070000.0,
+      "EI_fa_Nm2": 364400.0,
+      "EI_lat_Nm2": 209560.0,
+      "GJ_Nm2": 88702.0
+    },
+    "mast_EI_relative_uncertainty": 0.41,
+    "spreader_section": {
+      "EA_N": 27600000.0,
+      "EI_vertical_Nm2": 2523.4,
+      "EI_horizontal_Nm2": 12207.0,
+      "GJ_Nm2": 3224.8
+    }
+  },
+  "wires": {
+    "cap_shroud": {
+      "diameter_mm": {
+        "value": 7.0,
+        "unit": "mm",
+        "source": "assumed",
+        "uncertainty": 1.0
+      },
+      "EA_N": 4618141.2,
+      "break_load_N": {
+        "value": 50800.0,
+        "unit": "N",
+        "source": "estimate",
+        "uncertainty": 0.1,
+        "note": "Dyform 316 catalogue order of magnitude"
+      },
+      "turn_shorten_m": 0.00254
+    },
+    "intermediate_shroud": {
+      "diameter_mm": {
+        "value": 6.0,
+        "unit": "mm",
+        "source": "assumed",
+        "uncertainty": 1.0
+      },
+      "EA_N": 3392920.1,
+      "break_load_N": {
+        "value": 37400.0,
+        "unit": "N",
+        "source": "estimate",
+        "uncertainty": 0.1,
+        "note": "Dyform 316 catalogue order of magnitude"
+      },
+      "turn_shorten_m": 0.00254
+    },
+    "lower_shroud": {
+      "diameter_mm": {
+        "value": 7.0,
+        "unit": "mm",
+        "source": "assumed",
+        "uncertainty": 1.0
+      },
+      "EA_N": 4618141.2,
+      "break_load_N": {
+        "value": 50800.0,
+        "unit": "N",
+        "source": "estimate",
+        "uncertainty": 0.1,
+        "note": "Dyform 316 catalogue order of magnitude"
+      },
+      "turn_shorten_m": 0.00254
+    },
+    "forestay": {
+      "diameter_mm": {
+        "value": 7.0,
+        "unit": "mm",
+        "source": "assumed",
+        "uncertainty": 1.0
+      },
+      "EA_N": 4618141.2,
+      "break_load_N": {
+        "value": 50800.0,
+        "unit": "N",
+        "source": "estimate",
+        "uncertainty": 0.1,
+        "note": "Dyform 316 catalogue order of magnitude"
+      },
+      "turn_shorten_m": 0.00254
+    },
+    "split_backstay": {
+      "diameter_mm": {
+        "value": 6.0,
+        "unit": "mm",
+        "source": "assumed",
+        "uncertainty": 1.0
+      },
+      "EA_N": 3392920.1,
+      "break_load_N": {
+        "value": 37400.0,
+        "unit": "N",
+        "source": "estimate",
+        "uncertainty": 0.1,
+        "note": "Dyform 316 catalogue order of magnitude"
+      },
+      "turn_shorten_m": 0.00254
+    }
+  },
+  "calibration": {
+    "status": "uncalibrated",
+    "fitted_on": null,
+    "measurement_sets": [],
+    "params": {
+      "k_EI_fa": {
+        "value": 1.0,
+        "kind": "factor",
+        "note": "x fore-aft mast EI (whole mast)"
+      },
+      "k_EI_lat": {
+        "value": 1.0,
+        "kind": "factor",
+        "note": "x athwartships mast EI (whole mast)"
+      },
+      "k_EI_upper": {
+        "value": 1.0,
+        "kind": "factor",
+        "note": "x upper-section EI, both planes (taper stiffness ratio)"
+      },
+      "k_EA_wire": {
+        "value": 1.0,
+        "kind": "factor",
+        "note": "x EA of all wires"
+      },
+      "base_k_rot_fa": {
+        "value": 0.0,
+        "kind": "absolute",
+        "unit": "N*m/rad",
+        "note": "mast-step rotational spring, fore-aft bending (0 = pinned)"
+      },
+      "base_k_rot_lat": {
+        "value": 0.0,
+        "kind": "absolute",
+        "unit": "N*m/rad",
+        "note": "mast-step rotational spring, lateral bending (0 = pinned)"
+      },
+      "prebend_m": {
+        "value": 0.0,
+        "kind": "absolute",
+        "unit": "m",
+        "note": "stress-free forward bow of the tube, half-sine over its length"
+      }
+    }
+  },
+  "notes": [
+    "Mast EI from cert section dims, thin-walled ellipse, wall thickness back-calculated from cert mast weight x tube_mass_fraction.",
+    "Taper: lower section below mast_taper_start_m, upper above mast_taper_end_m, linear in between.",
+    "Wire EA = E_nominal x nominal area; diameters are guesses until the rigging spec is known.",
+    "Calibration params are applied on top of these values by rigsolver; dockside measurements fit them later."
+  ]
+}

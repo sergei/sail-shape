@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/
+
+# Agent skill links (point into .venv)
+.agents/
+.claude/
+
+# IDE (keep shared project settings, drop per-user state)
+.idea/workspace.xml
+.idea/shelf/
+.idea/misc.xml
+.idea/*.iml
+
+# OS
+.DS_Store

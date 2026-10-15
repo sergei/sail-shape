@@ -1,0 +1,21 @@
+[project]
+name = "rigsolver"
+version = "0.1.0"
+description = "Mast shape vs. shroud/backstay tension for a Sun Fast 3300 rig"
+requires-python = ">=3.11"
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+app = ["streamlit>=1.66", "altair", "pandas"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["rigsolver", "rig_app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
